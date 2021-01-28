@@ -3,6 +3,8 @@
 #include <string.h>
 
 #include "tcl_config.h"
+#include "tcl_types.h"
+
 #include "tcl_interp.h"
 #include "tcl_parser.h"
 #include "tcl_value.h"

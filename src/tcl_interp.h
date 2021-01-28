@@ -2,18 +2,9 @@
 #ifndef TCL_INTERP_H
 #define TCL_INTERP_H
 
-#include <stdlib.h>
 #include "tcl_config.h"
-#include "tcl_cmd.h"
-#include "tcl_env.h"
-#include "tcl_value.h"
+#include "tcl_types.h"
 
-
-typedef struct tcl_interp_t tcl_interp_t;
-
-
-
-typedef int (*tcl_cmd_fn_t)(tcl_interp_t *, tcl_value_t *, void *);
 
 
 

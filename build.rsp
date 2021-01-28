@@ -21,3 +21,5 @@ src/tcl_cmd/puts.c
 src/tcl_cmd/set.c
 src/tcl_cmd/subst.c
 src/tcl_cmd/while.c
+
+-v

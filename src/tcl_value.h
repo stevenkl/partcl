@@ -2,9 +2,10 @@
 #ifndef TCL_VALUE_H
 #define TCL_VALUE_H
 
+#include "tcl_config.h"
+#include "tcl_types.h"
 
 
-typedef char tcl_value_t;
 
 const char *tcl_string(tcl_value_t *v);
 int tcl_int(tcl_value_t *v);

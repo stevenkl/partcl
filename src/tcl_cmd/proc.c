@@ -1,10 +1,14 @@
 #include "tcl_config.h"
+#include "tcl_types.h"
+
+#include "tcl_env.h"
 #include "tcl_interp.h"
 #include "tcl_value.h"
+#include "tcl_var.h"
 
 
 
-static int tcl_user_proc(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
+extern int tcl_user_proc(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
   tcl_value_t *code = (tcl_value_t *)arg;
   tcl_value_t *params = tcl_list_at(code, 2);
   tcl_value_t *body = tcl_list_at(code, 3);
@@ -22,7 +26,7 @@ static int tcl_user_proc(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
   return FNORMAL;
 }
 
-static int tcl_cmd_proc(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
+extern int tcl_cmd_proc(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
   (void)arg;
   tcl_value_t *name = tcl_list_at(args, 1);
   tcl_register(tcl, tcl_string(name), tcl_user_proc, 0, tcl_dup(args));

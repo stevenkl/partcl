@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/**",
                 "C:\\Host\\Apps\\tcc\\include"
             ],
             "defines": [
@@ -17,7 +17,7 @@
             "compilerPath": "C:\\Host\\Apps\\tcc\\tcc.exe",
             "browse": {
                 "path": [
-                    "C:\\Host\\Apps\\tcc\\include"
+                    "${workspaceFolder}/src/"
                 ]
             }
         }

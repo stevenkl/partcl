@@ -1,10 +1,11 @@
+#include <string.h>
 #include "tcl_config.h"
 #include "tcl_interp.h"
 #include "tcl_value.h"
 
 
 
-static int tcl_cmd_flow(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
+extern int tcl_cmd_flow(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
   (void)arg;
   int r = FERROR;
   tcl_value_t *flowval = tcl_list_at(args, 0);

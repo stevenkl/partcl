@@ -1,30 +1,22 @@
-#include <stdlib.h>
 #include "tcl_config.h"
+#include "tcl_types.h"
+
 #include "tcl_parser.h"
 
 
 
 
-
-/* Token type and control flow constants */
-// enum { TCMD, TWORD, TPART, TERROR };
-// enum { FERROR, FNORMAL, FRETURN, FBREAK, FAGAIN };
-
-
-
-
-
-static int tcl_is_special(char c, int q) {
+extern int tcl_is_special(char c, int q) {
   return (c == '$' || (!q && (c == '{' || c == '}' || c == ';' || c == '\r' ||
                               c == '\n')) ||
           c == '[' || c == ']' || c == '"' || c == '\0');
 }
 
 
-static int tcl_is_space(char c) { return (c == ' ' || c == '\t'); }
+extern int tcl_is_space(char c) { return (c == ' ' || c == '\t'); }
 
 
-static int tcl_is_end(char c) {
+extern int tcl_is_end(char c) {
   return (c == '\n' || c == '\r' || c == ';' || c == '\0');
 }
 
@@ -35,7 +27,6 @@ int tcl_next(const char *s, size_t n, const char **from, const char **to, int *q
   char open;
   char close;
 
-  DBG("tcl_next(%.*s)+%d+%d|%d\n", n, s, *from - s, *to - s, *q);
 
   /* Skip leading spaces if not quoted */
   for (; !*q && n > 0 && tcl_is_space(*s); s++, n--) {

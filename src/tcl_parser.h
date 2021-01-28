@@ -4,21 +4,13 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include "tcl_config.h"
+#include "tcl_types.h"
 
 
-
-
-/* A helper parser struct and macro (requires C99) */
-typedef struct tcl_parser_t {
-  const char *from;
-  const char *to;
-  const char *start;
-  const char *end;
-  int q;
-  int token;
-}tcl_parser_t;
-
-
+extern int tcl_is_special(char c, int q);
+extern int tcl_is_space(char c);
+extern int tcl_is_end(char c);
 int tcl_next(const char *s, size_t n, const char **from, const char **to, int *q);
 
 #endif

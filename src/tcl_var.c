@@ -1,14 +1,15 @@
+#include <string.h>
 #include <stdlib.h>
 
+#include "tcl_config.h"
+#include "tcl_types.h"
+
 #include "tcl_env.h"
-#include "tcl_interp.h"
 #include "tcl_value.h"
-#include "tcl_var.h"
 
 
 
 tcl_value_t *tcl_var(tcl_interp_t *tcl, tcl_value_t *name, tcl_value_t *v) {
-  DBG("var(%s := %.*s)\n", tcl_string(name), tcl_length(v), tcl_string(v));
   tcl_var_t *var;
   for (var = tcl->env->vars; var != NULL; var = var->next) {
     if (strcmp(var->name, tcl_string(name)) == 0) {

@@ -4,7 +4,7 @@
 
 
 
-static int tcl_cmd_if(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
+extern int tcl_cmd_if(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
   (void)arg;
   int i = 1;
   int n = tcl_list_length(args);

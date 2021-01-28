@@ -1,10 +1,10 @@
+#include <string.h>
 #include "tcl_config.h"
 #include "tcl_interp.h"
 #include "tcl_value.h"
 
 
-#ifndef TCL_DISABLE_MATH
-static int tcl_cmd_math(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
+extern int tcl_cmd_math(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
   (void)arg;
   char buf[64];
   tcl_value_t *opval = tcl_list_at(args, 0);
@@ -56,4 +56,3 @@ static int tcl_cmd_math(tcl_interp_t *tcl, tcl_value_t *args, void *arg) {
   tcl_free(bval);
   return tcl_result(tcl, FNORMAL, tcl_alloc(p, strlen(p)));
 }
-#endif
