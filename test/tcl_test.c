@@ -1,7 +1,9 @@
 #include <stdio.h>
 
+#ifdef MAKE_TEST
 #define TEST
 #include "tcl.c"
+#endif
 
 int status = 0;
 #define FAIL(...)                                                              \

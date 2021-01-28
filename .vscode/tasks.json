@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "process",
+			"label": "C: TCC build @build.rsp",
+			"command": "C:\\Host\\Apps\\tcc\\tcc.exe",
+			"args": [
+				"@${workspaceFolder}\\build.rsp"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:\\Host\\Apps\\tcc\\tcc.exe"
+		}
+	]
+}

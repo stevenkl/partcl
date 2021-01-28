@@ -1,0 +1,23 @@
+-m64
+-o build/tcl.exe
+
+-D_WIN32
+
+-Isrc
+
+src/tcl.c
+src/tcl_cmd.c
+src/tcl_env.c
+src/tcl_interp.c
+src/tcl_parser.c
+src/tcl_value.c
+src/tcl_var.c
+
+src/tcl_cmd/flow.c
+src/tcl_cmd/if.c
+src/tcl_cmd/math.c
+src/tcl_cmd/proc.c
+src/tcl_cmd/puts.c
+src/tcl_cmd/set.c
+src/tcl_cmd/subst.c
+src/tcl_cmd/while.c
