@@ -5,7 +5,7 @@
 
 typedef char   tcl_value_t;
 
-typedef int (*tcl_cmd_fn_t)(void *, void *, void *);
+typedef int (*tcl_cmd_fn_t)(struct tcl_interp_t * tcl, tcl_value_t * args, void * arg);
 
 
 typedef struct tcl_var_t {

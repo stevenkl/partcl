@@ -11,12 +11,6 @@
 
 
 
-
-
-
-#ifndef TEST
-
-
 int main() {
   tcl_interp_t tcl;
   int buflen = CHUNK_SIZE;
@@ -45,8 +39,8 @@ int main() {
       } else if (p.token == TCMD && *(p.from) != '\0') {
         int r = tcl_eval(&tcl, buf, strlen(buf));
         if (r != FERROR) {
-          printf("result> %.*s\n", tcl_length(tcl.result),
-                 tcl_string(tcl.result));
+          // printf("result> %.*s\n", tcl_length(tcl.result),
+          //        tcl_string(tcl.result));
         } else {
           printf("?!\n");
         }
@@ -67,4 +61,3 @@ int main() {
 
   return 0;
 }
-#endif

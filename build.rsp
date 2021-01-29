@@ -1,6 +1,8 @@
 -m64
 -o build/tcl.exe
 
+-Wall
+-O3
 -D_WIN32
 
 -Isrc
